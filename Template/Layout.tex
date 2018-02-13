@@ -22,6 +22,7 @@
 \usepackage{graphicx}
 \usepackage{tabularx}
 
+
 % Comando per le firme, per aggiungere dei campi Data, decommentare le due righe sotto
 \newcommand*{\SignatureAndDate}[1]{%
     \par\noindent\makebox[4.0in]{\hrulefill} %\hfill\makebox[2.0in]{\hrulefill}%
@@ -42,7 +43,9 @@ top=2.5cm,
 bottom=2.5cm,
 left=1.5cm,
 right=1.5cm,
-head=30pt
+head=30pt,
+textheight=8in,
+footskip=10pt
 ]{geometry}
 
 \usepackage[italian]{isodate}
@@ -68,11 +71,9 @@ head=30pt
 }
 
 \lhead{
-    \textline[t]{\includegraphics[width=1cm, keepaspectratio=true]{img/UniPd.png}
-		    \includegraphics[width=1cm, keepaspectratio=true]{img/fablab.png}
-    }
-    {Piano di lavoro stage presso \\\ragioneSocAzienda}
-    {\nomeStudente \cognomeStudente\\ (\matricolaStudente)}
+    \textline[t]{\includegraphics[width=1cm, keepaspectratio=true]{img/fablab.png}}
+    {\textbf{\ragioneSocAzienda}}
+    {\sitoAzienda}
 }
 
 % Line under the heading
@@ -85,6 +86,16 @@ head=30pt
 %***PIÈ DI PAGINA***
 %\lfoot{\includegraphics[keepaspectratio = true, width = 25px] {img/UniPd.png} \textit{\nomeStudente 
 %\cognomeStudente (\matricolaStudente)}\\ \footnotesize{\emailStudente}}
-\rfoot{\thepage/\pageref{LastPage}} %per le prime pagine: mostra solo il numero romano
-\cfoot{}
+\lfoot{{\fontsize{8}{10}\selectfont
+\textbf{LAB NETWORK S.r.l. Unipersonale}\\
+Viale della Navigazione Interna 51/A 35129 Padova\\
+www.labnetwork.it\\
+}
+}
+ 		
+\cfoot{{\fontsize{8}{10}\selectfont \thepage/\pageref{LastPage}}} %per le prime pagine: mostra solo il numero romano
+
+\rfoot{{\fontsize{8}{10}\selectfont Tel. +39 392 857 0418\\
+email: info@labnetwork.it\\
+P.IVA 05033920280\\}}
 \renewcommand{\footrulewidth}{0.4pt}   %Linea sopra il piè di pagina
